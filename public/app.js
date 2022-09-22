@@ -103,7 +103,7 @@
     const isMyMessage = options.username === getUserName();
     const username = isMyMessage ? 'Вы' : options.username;
 
-    const messageClassName = isMyMessage ? 'chat-message chat-message_my': 'chat-message chat-message_user';
+    const messageClassName = isMyMessage ? 'chat-message chat-message_my' : 'chat-message chat-message_user';
     const node = createElement('div', {
       className: messageClassName
     });
@@ -145,14 +145,14 @@
   const initUpdates = () => {
     const container = document.querySelector('.chat__messages');
 
-    setInterval( async () => {
+    setInterval(async () => {
       const messages = await getUpdates();
 
       renderMessages({
         messages,
         container
       });
-    }, 5000);
+    }, 3000);
   };
 
   const onload = callback => {
